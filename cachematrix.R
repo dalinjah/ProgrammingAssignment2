@@ -2,9 +2,11 @@
 ## functions do
 
 ## Write a short comment describing this function
-
 makeCacheMatrix <- function(x = matrix()) {
+# the function makecache matrix
 
+  get <- function(){x}
+  setinverse <- function(inverse) {inv <<- inverse}
 }
 
 
@@ -12,4 +14,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+    message("getting cached data")
+    return(inv)
+  }
+  mat <- x$get()
+  inv <- solve(mat, ...)
+  x$setinverse(inv)
+  inv
 }
